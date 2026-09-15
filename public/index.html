@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jornada do Professor Consciente | Davi Ribeiro</title>
+  <meta name="description" content="Participe gratuitamente de 3 aulas com Davi Ribeiro e descubra uma nova forma de enxergar seus alunos, estruturar suas aulas e desenvolver uma didática mais consciente.">
+  <meta property="og:title" content="Jornada do Professor Consciente | Davi Ribeiro">
+  <meta property="og:description" content="Participe gratuitamente de 3 aulas com Davi Ribeiro e descubra uma nova forma de enxergar seus alunos, estruturar suas aulas e desenvolver uma didática mais consciente.">
+  <link rel="icon" type="image/png" href="images/favicon-daviribeiro.png">
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init','1593392189110710');
+  (function(){
+    function getCookie(n){var m=document.cookie.match('(^|;)\\s*'+n+'\\s*=\\s*([^;]+)');return m?decodeURIComponent(m.pop()):null}
+    function setCookie(n,v,d){document.cookie=n+'='+v+'; expires='+(new Date(Date.now()+d*864e5)).toUTCString()+'; path=/; SameSite=Lax'}
+    function getFbc(){var fbc=getCookie('_fbc');if(fbc)return fbc;var p=new URLSearchParams(window.location.search);var fbclid=p.get('fbclid');if(fbclid){fbc='fb.1.'+Date.now()+'.'+fbclid;setCookie('_fbc',fbc,90);return fbc}return null}
+    var pvId=(window.crypto&&crypto.randomUUID)?crypto.randomUUID():'evt_'+Date.now()+'_'+Math.random().toString(36).slice(2);
+    fbq('track','PageView',{},{eventID:pvId});
+    setTimeout(function(){fetch('/.netlify/functions/facebook-capi',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({eventName:'PageView',eventId:pvId,eventUrl:window.location.href,fbp:getCookie('_fbp'),fbc:getFbc()}),keepalive:true}).catch(function(){})},500);
+  })();
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1593392189110710&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--primary:#282F7E;--gold:#D6A73A;--gold-light:#e0b960;--dark:#111426;--dark-blue:#0d1030;--off-white:#F7F5F0;--off-white-alt:#F0EDE6;--white:#FFF;--text:#202020;--text-light:#555;--serif:'Playfair Display',Georgia,serif;--sans:'Inter',system-ui,sans-serif;--container:1200px;--reading:720px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);color:var(--text);background:var(--white);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    img{max-width:100%;height:auto;display:block}
+    a{color:inherit;text-decoration:none}
+    button{cursor:pointer;border:none;font-family:inherit}
+    .gold{color:var(--gold)}
+    .gold-line{display:block;width:48px;height:3px;background:var(--gold);border-radius:2px}
+    .gold-line--center{margin:0 auto 24px}
+
+    /* Decorative */
+    .deco-circle{position:absolute;border-radius:50%;border:1px solid rgba(214,167,58,.08);pointer-events:none}
+    .deco-dot{position:absolute;width:6px;height:6px;background:var(--gold);border-radius:50%;opacity:.12;pointer-events:none}
+    .deco-line-v{position:absolute;width:1px;background:linear-gradient(180deg,transparent,rgba(214,167,58,.12),transparent);pointer-events:none}
+    .section-logo{width:80px;height:auto;margin:0 auto 20px;opacity:.1}
+    .section-logo--light{opacity:.15;filter:brightness(10)}
+
+    /* Forms */
+    .form-group{margin-bottom:16px}
+    .form-group input{width:100%;padding:18px 20px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:6px;color:#fff;font-size:1rem;font-family:var(--sans);transition:border-color .25s,background .25s,box-shadow .25s}
+    .form-group input::placeholder{color:rgba(255,255,255,.4)}
+    .form-group input:focus{outline:none;border-color:var(--gold);background:rgba(255,255,255,.1);box-shadow:0 0 0 3px rgba(214,167,58,.15)}
+    .phone-row{display:flex;gap:12px}
+    .phone-row .ddd-field{width:90px;flex-shrink:0}
+    .phone-row .phone-field{flex:1}
+    .btn-gold{display:block;width:100%;padding:18px 24px;background:linear-gradient(135deg,var(--gold) 0%,var(--gold-light) 100%);color:var(--dark);font-weight:700;font-size:1rem;letter-spacing:.04em;border-radius:6px;border:none;margin-top:8px;transition:transform .2s,box-shadow .2s,filter .2s;text-align:center;text-transform:uppercase;position:relative;overflow:hidden}
+    .btn-gold::after{content:'';position:absolute;top:-50%;left:-60%;width:40%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-25deg);transition:left .6s ease}
+    .btn-gold:hover::after{left:120%}
+    .btn-gold:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(214,167,58,.3);filter:brightness(1.05)}
+    .btn-gold:active{transform:translateY(0)}
+    .form-light .form-group input{background:var(--white);border:1px solid #d4d4d4;color:var(--text)}
+    .form-light .form-group input::placeholder{color:#999}
+    .form-light .form-group input:focus{border-color:var(--gold);background:var(--white);box-shadow:0 0 0 3px rgba(214,167,58,.12)}
+    /* Field validation */
+    .form-group input.invalid{border-color:#f87171!important}
+    .field-error{display:none;color:#f87171;font-size:.76rem;margin-top:4px;font-weight:600}
+    .field-error.show{display:block}
+    .form-alert{display:none;background:rgba(248,113,113,.12);border:1px solid #f87171;color:#fecaca;font-size:.82rem;padding:10px 12px;border-radius:8px;margin-bottom:12px;text-align:center}
+    .form-alert.show{display:block}
+    /* Honeypot */
+    .hp-field{position:absolute;left:-9999px}
+    /* Logo variants */
+    .section-logo--white{opacity:.2;filter:brightness(0) invert(1)}
+    .section-logo--color{opacity:.18;filter:none}
+
+    /* Animations */
+    @media(prefers-reduced-motion:no-preference){
+      .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}
+      .reveal.visible{opacity:1;transform:translateY(0)}
+      .reveal-left{opacity:0;transform:translateX(-60px);transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}
+      .reveal-left.visible{opacity:1;transform:translateX(0)}
+      .reveal-right{opacity:0;transform:translateX(60px);transition:opacity .8s cubic-bezier(.25,.46,.45,.94),transform .8s cubic-bezier(.25,.46,.45,.94)}
+      .reveal-right.visible{opacity:1;transform:translateX(0)}
+      .reveal-scale{opacity:0;transform:scale(.88);transition:opacity .7s ease,transform .7s ease}
+      .reveal-scale.visible{opacity:1;transform:scale(1)}
+      .stagger-1{transition-delay:.1s}.stagger-2{transition-delay:.25s}.stagger-3{transition-delay:.4s}
+      .stagger-4{transition-delay:.55s}.stagger-5{transition-delay:.7s}.stagger-6{transition-delay:.85s}.stagger-7{transition-delay:1s}
+    }
+    @media(prefers-reduced-motion:reduce){.reveal,.reveal-left,.reveal-right,.reveal-scale{opacity:1;transform:none}}
+
+    .particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:1}
+    .particle{position:absolute;width:4px;height:4px;background:var(--gold);border-radius:50%;opacity:.15;animation:float-particle linear infinite}
+    @keyframes float-particle{0%{transform:translateY(100vh) rotate(0);opacity:0}10%{opacity:.15}90%{opacity:.15}100%{transform:translateY(-20px) rotate(360deg);opacity:0}}
+    @keyframes slow-zoom{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+    @keyframes fadeInDown{from{opacity:0;transform:translateY(-20px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    @keyframes float-gentle{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+    @keyframes pulse-glow{0%,100%{box-shadow:0 0 20px rgba(214,167,58,.1)}50%{box-shadow:0 0 40px rgba(214,167,58,.25)}}
+    @keyframes typewriter-cursor{0%,100%{border-right-color:var(--gold)}50%{border-right-color:transparent}}
+
+    /* Submission overlay */
+    .submit-overlay{position:fixed;inset:0;z-index:9999;background:rgba(17,20,38,.96);display:flex;flex-direction:column;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .5s ease}
+    .submit-overlay.active{opacity:1;pointer-events:all}
+    .submit-overlay__text{font-family:var(--serif);font-size:clamp(1.3rem,3vw,1.8rem);color:var(--gold);margin-top:32px;text-align:center;opacity:0;transform:translateY(20px);transition:opacity .5s 1.8s ease,transform .5s 1.8s ease}
+    .submit-overlay.active .submit-overlay__text{opacity:1;transform:translateY(0)}
+    .submit-overlay__sub{font-size:.95rem;color:rgba(255,255,255,.45);margin-top:8px;opacity:0;transition:opacity .5s 2.3s ease}
+    .submit-overlay.active .submit-overlay__sub{opacity:1}
+    /* Juggler */
+    .juggler-wrap{opacity:0;transform:scale(.8);transition:opacity .4s .2s ease,transform .5s .2s cubic-bezier(.34,1.56,.64,1)}
+    .submit-overlay.active .juggler-wrap{opacity:1;transform:scale(1)}
+    .juggler-svg{width:160px;height:200px}
+    .juggler-body{fill:none;stroke:var(--gold);stroke-width:2.5;stroke-linecap:round}
+    .juggler-head{fill:none;stroke:var(--gold);stroke-width:2.5}
+    .juggler-ball{fill:var(--gold)}
+    .ball-1{animation:juggle1 .9s ease-in-out infinite}
+    .ball-2{animation:juggle2 .9s ease-in-out infinite .3s}
+    .ball-3{animation:juggle3 .9s ease-in-out infinite .6s}
+    @keyframes juggle1{0%,100%{transform:translate(0,0)}25%{transform:translate(18px,-35px)}50%{transform:translate(36px,0)}75%{transform:translate(18px,-35px)}}
+    @keyframes juggle2{0%,100%{transform:translate(0,0)}25%{transform:translate(-18px,-35px)}50%{transform:translate(-36px,0)}75%{transform:translate(-18px,-35px)}}
+    @keyframes juggle3{0%,100%{transform:translate(0,-35px)}25%{transform:translate(-18px,0)}50%{transform:translate(0,-35px)}75%{transform:translate(18px,0)}}
+    .left-arm{animation:wave-left .9s ease-in-out infinite;transform-origin:65px 95px}
+    .right-arm{animation:wave-right .9s ease-in-out infinite .45s;transform-origin:95px 95px}
+    @keyframes wave-left{0%,100%{transform:rotate(0)}50%{transform:rotate(-12deg)}}
+    @keyframes wave-right{0%,100%{transform:rotate(0)}50%{transform:rotate(12deg)}}
+
+    /* ============ HERO ============ */
+    .hero{position:relative;min-height:100vh;display:flex;align-items:flex-start;background:var(--dark);overflow:hidden}
+    .hero__bg{position:absolute;inset:0;background:url('images/hero.jpg') center top/cover no-repeat;opacity:.22;animation:slow-zoom 20s ease-in-out infinite alternate}
+    .hero__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,20,38,.88) 0%,rgba(40,47,126,.55) 50%,rgba(17,20,38,.92) 100%)}
+    .hero__inner{position:relative;z-index:2;max-width:var(--container);margin:0 auto;padding:36px 24px 32px;text-align:center;width:100%}
+    .hero__logo{width:90px;height:auto;margin:0 auto 12px;opacity:0;animation:fadeInDown .8s .1s forwards;filter:drop-shadow(0 0 20px rgba(214,167,58,.3))}
+    .hero__content{color:#fff;max-width:800px;margin:0 auto}
+    .hero__eyebrow{font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:8px;opacity:0;animation:fadeInDown .8s .3s forwards}
+    .hero__date{font-size:.85rem;font-weight:500;color:rgba(255,255,255,.65);margin-bottom:20px;letter-spacing:.04em;opacity:0;animation:fadeInDown .8s .5s forwards}
+    .hero__date span{color:var(--gold);font-weight:700}
+    .hero__title{font-family:var(--serif);font-size:clamp(1.65rem,4.2vw,2.7rem);font-weight:900;line-height:1.18;color:#fff;margin-bottom:18px;opacity:0;animation:fadeInUp 1s .7s forwards}
+    .hero__title .highlight{color:var(--gold)}
+    .hero__ref{font-family:var(--serif);font-size:clamp(1.2rem,3vw,1.8rem);font-weight:900;color:#fff;margin-bottom:20px;opacity:0;animation:fadeInUp .8s .9s forwards}
+    .hero__sub{font-size:.95rem;line-height:1.7;color:rgba(255,255,255,.7);max-width:620px;margin:0 auto 14px;opacity:0;animation:fadeInUp .8s 1s forwards}
+    .hero__cta-text{font-size:.82rem;color:rgba(255,255,255,.38);margin-bottom:18px;font-weight:500;opacity:0;animation:fadeInUp .8s 1.1s forwards}
+    .hero__form-wrap{max-width:580px;margin:0 auto;opacity:0;animation:fadeInUp .8s 1.2s forwards}
+    .hero__audience{font-size:.82rem;color:rgba(255,255,255,.5);text-align:center;margin-top:14px;line-height:1.5;font-weight:500}
+
+    /* ============ QUEBRA DE CRENÇA ============ */
+    .crenca{background:var(--off-white);padding:90px 24px;position:relative;overflow:hidden}
+    .crenca__inner{max-width:var(--reading);margin:0 auto;text-align:center;position:relative;z-index:2}
+    .crenca__title{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:900;line-height:1.3;margin-bottom:36px;color:var(--dark)}
+    .crenca__title .gold-quote{color:var(--gold);font-style:italic}
+    .crenca__text{font-size:1.05rem;line-height:1.85;color:var(--text-light);text-align:left}
+    .crenca__text p{margin-bottom:16px}
+
+    /* ============ NOVA LENTE ============ */
+    .nova-lente{background:var(--off-white-alt);padding:90px 24px;position:relative;overflow:hidden}
+    .nova-lente__inner{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;position:relative;z-index:2}
+    .nova-lente__img{border-radius:14px;overflow:hidden;position:relative}
+    .nova-lente__img::after{content:'';position:absolute;inset:0;border-radius:14px;border:2px solid rgba(214,167,58,.12);pointer-events:none}
+    .nova-lente__img img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;transition:transform .6s ease}
+    .nova-lente__img:hover img{transform:scale(1.03)}
+    .nova-lente__title{font-family:var(--serif);font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:900;color:var(--dark);line-height:1.3;margin-bottom:28px}
+    .nova-lente__text{font-size:1rem;line-height:1.85;color:var(--text-light)}
+    .nova-lente__text p{margin-bottom:14px}
+    .nova-lente__text .olhar{display:inline-block;font-family:var(--serif);font-size:1.5rem;font-weight:900;color:var(--gold);margin:16px 0;position:relative}
+    .nova-lente__text .olhar::after{content:'';position:absolute;bottom:-4px;left:0;width:100%;height:2px;background:var(--gold);opacity:.4}
+    .nova-lente__text .question{font-style:italic;color:var(--dark);font-weight:500}
+
+    /* ============ PILARES ============ */
+    .pilares{background:var(--off-white);padding:90px 24px;position:relative;overflow:hidden}
+    .pilares__inner{max-width:var(--container);margin:0 auto;text-align:center;position:relative;z-index:2}
+    .pilares__title{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:900;color:var(--dark);margin-bottom:56px}
+    .pilares__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-bottom:56px}
+    .pilar-card{background:var(--white);border:1px solid rgba(214,167,58,.2);border-radius:12px;padding:40px 28px;text-align:left;transition:transform .35s ease,box-shadow .35s ease,border-color .35s ease;position:relative;overflow:hidden}
+    .pilar-card::after{content:'';position:absolute;top:0;right:0;width:80px;height:80px;border-radius:50%;background:radial-gradient(circle,rgba(214,167,58,.06) 0%,transparent 70%);transform:translate(30px,-30px)}
+    .pilar-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(17,20,38,.08);border-color:var(--gold)}
+    .pilar-card__num{font-family:var(--serif);font-size:2.2rem;font-weight:900;color:var(--gold);margin-bottom:12px}
+    .pilar-card__title{font-size:.85rem;font-weight:700;letter-spacing:.14em;color:var(--primary);text-transform:uppercase;margin-bottom:16px}
+    .pilar-card__text{font-size:.95rem;line-height:1.7;color:var(--text-light)}
+    .pilares__closing{font-family:var(--serif);font-size:clamp(1.1rem,2.5vw,1.35rem);font-weight:700;color:var(--dark);line-height:1.65;max-width:600px;margin:0 auto}
+
+    /* ============ PROGRAMAÇÃO — AZUL ============ */
+    .programacao{background:linear-gradient(180deg,var(--dark-blue) 0%,#1a2068 100%);padding:100px 24px;position:relative;overflow:hidden}
+    .programacao__inner{max-width:var(--container);margin:0 auto;position:relative;z-index:2}
+    .programacao__title{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:900;color:#fff;margin-bottom:48px;margin-top:24px}
+    .programacao__grid{display:grid;grid-template-columns:1fr 380px;gap:48px;align-items:start}
+    .aula-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:32px 28px;margin-bottom:20px;transition:transform .3s ease,box-shadow .3s ease,background .3s ease;position:relative;overflow:hidden;backdrop-filter:blur(8px)}
+    .aula-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:var(--gold);transform:scaleY(0);transition:transform .4s ease;transform-origin:top}
+    .aula-card:hover{transform:translateX(4px);box-shadow:0 8px 28px rgba(0,0,0,.2);background:rgba(255,255,255,.08)}
+    .aula-card:hover::before{transform:scaleY(1)}
+    .aula-card__eyebrow{font-size:.75rem;font-weight:700;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+    .aula-card__title{font-family:var(--serif);font-size:1.35rem;font-weight:900;color:#fff;margin-bottom:6px}
+    .aula-card__sub{font-size:.9rem;font-weight:600;color:var(--gold-light);margin-bottom:14px}
+    .aula-card__text{font-size:.93rem;line-height:1.75;color:rgba(255,255,255,.6)}
+    .aula-card__time{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;font-weight:600;color:rgba(255,255,255,.4);margin-top:12px;padding-top:12px;border-top:1px solid rgba(255,255,255,.08)}
+    .aula-card__time svg{width:14px;height:14px;stroke:var(--gold);fill:none;stroke-width:2}
+    .programacao__img{border-radius:14px;overflow:hidden;position:sticky;top:40px}
+    .programacao__img img{width:100%;object-fit:cover;aspect-ratio:3/4;transition:transform .6s ease}
+    .programacao__img:hover img{transform:scale(1.03)}
+
+    /* ============ FORM SECTION ============ */
+    .form-section{background:var(--off-white);padding:90px 24px;position:relative;overflow:hidden}
+    .form-section__inner{max-width:540px;margin:0 auto;text-align:center;position:relative;z-index:2}
+    .form-section__title{font-family:var(--serif);font-size:clamp(1.5rem,3.5vw,2.1rem);font-weight:900;color:var(--dark);line-height:1.3;margin-bottom:16px}
+    .form-section__sub{font-size:1rem;color:var(--text-light);margin-bottom:36px;line-height:1.7}
+
+    /* ============ MANIFESTO — REDESIGNED ============ */
+    .manifesto{position:relative;padding:130px 24px;background:var(--dark);overflow:hidden}
+    .manifesto__bg{position:absolute;inset:0;background:url('images/manifesto.jpg') center top/cover no-repeat;opacity:.12;animation:slow-zoom 25s ease-in-out infinite alternate}
+    .manifesto__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,16,48,.94) 0%,rgba(40,47,126,.65) 50%,rgba(13,16,48,.94) 100%)}
+    /* Animated accent lines */
+    .manifesto__accents{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+    .manifesto__accents .acc-ring{position:absolute;border:1px solid rgba(214,167,58,.06);border-radius:50%}
+    .manifesto__accents .acc-ring--1{width:500px;height:500px;top:-150px;right:-100px;animation:float-gentle 8s ease-in-out infinite}
+    .manifesto__accents .acc-ring--2{width:350px;height:350px;bottom:-100px;left:-80px;animation:float-gentle 10s ease-in-out infinite 2s}
+    .manifesto__accents .acc-ring--3{width:200px;height:200px;top:40%;left:50%;transform:translateX(-50%);animation:float-gentle 6s ease-in-out infinite 1s;border-color:rgba(214,167,58,.04)}
+    .manifesto__inner{position:relative;z-index:3;max-width:var(--reading);margin:0 auto;text-align:center;color:#fff}
+    .manifesto__logo{width:90px;margin:0 auto 28px;filter:drop-shadow(0 0 20px rgba(214,167,58,.25));animation:float-gentle 4s ease-in-out infinite}
+    .manifesto__title{font-family:var(--serif);font-size:clamp(1.7rem,4.2vw,2.6rem);font-weight:900;line-height:1.25;margin-bottom:44px}
+    .manifesto__platforms{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:44px}
+    .manifesto__pill{font-size:.9rem;color:rgba(255,255,255,.45);padding:8px 24px;border-radius:40px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);transition:border-color .3s,color .3s,background .3s}
+    .manifesto__pill:hover{border-color:rgba(214,167,58,.3);color:rgba(255,255,255,.7);background:rgba(214,167,58,.05)}
+    .manifesto__divider{width:80px;height:2px;margin:0 auto 44px;background:linear-gradient(90deg,transparent,var(--gold),transparent);animation:pulse-glow 3s ease-in-out infinite}
+    .manifesto__highlight{font-family:var(--serif);font-size:clamp(1.4rem,3.2vw,2rem);font-weight:900;color:var(--gold);margin-bottom:48px;position:relative;display:inline-block}
+    .manifesto__highlight::before,.manifesto__highlight::after{content:'';position:absolute;top:50%;width:40px;height:1px;background:var(--gold);opacity:.3}
+    .manifesto__highlight::before{right:calc(100% + 16px)}
+    .manifesto__highlight::after{left:calc(100% + 16px)}
+    .manifesto__lines{max-width:600px;margin:0 auto 52px}
+    .manifesto__line{font-size:1.05rem;line-height:1.9;color:rgba(255,255,255,.6);padding:6px 0;position:relative;transition:color .4s}
+    .manifesto__line--accent{color:rgba(255,255,255,.85);font-weight:500;margin-top:20px}
+    .manifesto__line::after{content:'';position:absolute;bottom:0;left:15%;right:15%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.04),transparent)}
+    .manifesto__closing{font-family:var(--serif);font-size:clamp(1.5rem,3.5vw,2.2rem);font-weight:900;color:#fff;position:relative;padding-top:28px}
+    .manifesto__closing::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:80px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+
+    /* ============ IDENTIFICAÇÃO ============ */
+    .identificacao{background:var(--off-white);padding:90px 24px;position:relative;overflow:hidden}
+    .identificacao__inner{max-width:var(--container);margin:0 auto;text-align:center;position:relative;z-index:2}
+    .identificacao__title{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:900;color:var(--dark);margin-bottom:48px}
+    .identificacao__grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:960px;margin:0 auto 48px;text-align:left}
+    .id-card{background:var(--white);border:1px solid #e5e2dc;border-radius:10px;padding:24px;font-size:.95rem;line-height:1.7;color:var(--text-light);border-left:3px solid var(--gold);transition:transform .3s ease,box-shadow .3s ease}
+    .id-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(17,20,38,.06)}
+    .id-card:last-child:nth-child(odd){grid-column:1/-1;max-width:50%;margin:0 auto}
+    .identificacao__closing{font-family:var(--serif);font-size:clamp(1.1rem,2.5vw,1.35rem);font-weight:700;color:var(--dark);max-width:660px;margin:0 auto;line-height:1.6}
+
+    /* ============ CTA FINAL ============ */
+    .cta-final{position:relative;padding:120px 24px;background:var(--dark);overflow:hidden}
+    .cta-final__bg{position:absolute;inset:0;background:url('images/cta-final.jpg') center top/cover no-repeat;opacity:.22;animation:slow-zoom 22s ease-in-out infinite alternate}
+    .cta-final__overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,20,38,.9) 0%,rgba(40,47,126,.7) 100%)}
+    .cta-final__inner{position:relative;z-index:2;max-width:580px;margin:0 auto;text-align:center;color:#fff}
+    .cta-final__logo{width:80px;margin:0 auto 20px;filter:drop-shadow(0 0 15px rgba(214,167,58,.2))}
+    .cta-final__title{font-family:var(--serif);font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:900;line-height:1.25;margin-bottom:24px}
+    .cta-final__text{font-size:1.05rem;line-height:1.8;color:rgba(255,255,255,.7);margin-bottom:28px}
+    .cta-final__event{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--gold);margin-bottom:4px}
+    .cta-final__date{font-size:.95rem;color:rgba(255,255,255,.55);margin-bottom:8px;font-weight:500}
+    .cta-final__form-cta{font-size:.9rem;color:rgba(255,255,255,.4);margin-bottom:28px}
+
+    /* ============ SOBRE DAVI ============ */
+    .sobre{background:var(--off-white);padding:90px 24px;position:relative;overflow:hidden}
+    .sobre__inner{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:380px 1fr;gap:60px;align-items:start;position:relative;z-index:2}
+    .sobre__img{border-radius:14px;overflow:hidden;position:relative}
+    .sobre__img::after{content:'';position:absolute;inset:0;border-radius:14px;border:2px solid rgba(214,167,58,.12);pointer-events:none}
+    .sobre__img img{width:100%;object-fit:cover;aspect-ratio:3/4;transition:transform .6s ease}
+    .sobre__img:hover img{transform:scale(1.03)}
+    .sobre__title{font-family:var(--serif);font-size:clamp(1.6rem,4vw,2.5rem);font-weight:900;color:var(--dark);margin-bottom:28px}
+    .sobre__text{font-size:1rem;line-height:1.85;color:var(--text-light)}
+    .sobre__text p{margin-bottom:14px}
+    .sobre__text strong{color:var(--dark);font-weight:600}
+    .sobre__text .emphasis{font-family:var(--serif);font-size:1.1rem;color:var(--dark);font-style:italic}
+
+    /* ============ FOOTER ============ */
+    .footer{background:#0a0c1a;padding:56px 24px;text-align:center;color:rgba(255,255,255,.4);font-size:.85rem;line-height:1.8}
+    .footer__logo{width:60px;margin:0 auto 16px;filter:brightness(0) invert(1);opacity:.35}
+    .footer__name{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:4px}
+    .footer__method{font-size:.85rem;color:var(--gold);margin-bottom:4px}
+    .footer__event{margin-bottom:20px;color:rgba(255,255,255,.5)}
+    .footer__legal{font-size:.78rem;max-width:500px;margin:0 auto;color:rgba(255,255,255,.3)}
+
+    /* ============ RESPONSIVE ============ */
+    @media(max-width:900px){
+      .nova-lente__inner{grid-template-columns:1fr;gap:40px}
+      .nova-lente__img img{aspect-ratio:4/5;max-height:500px;object-position:center top}
+      .pilares__grid{grid-template-columns:1fr;max-width:500px;margin:0 auto 48px}
+      .programacao__grid{grid-template-columns:1fr}
+      .programacao__img{display:none}
+      .sobre__inner{grid-template-columns:1fr;gap:40px}
+      .sobre__img{max-width:400px}
+      .identificacao__grid{grid-template-columns:1fr}
+      .id-card:last-child:nth-child(odd){max-width:100%}
+      .manifesto__highlight::before,.manifesto__highlight::after{display:none}
+      .manifesto__platforms{flex-direction:column;align-items:center;gap:8px}
+    }
+    @media(max-width:600px){
+      body{font-size:15px}
+      .hero__inner{padding:20px 16px 20px}
+      .hero__logo{width:60px;margin-bottom:8px}
+      .hero__eyebrow{font-size:.7rem;margin-bottom:6px;letter-spacing:.15em}
+      .hero__date{font-size:.78rem;margin-bottom:14px}
+      .hero__title{font-size:1.35rem;margin-bottom:14px;line-height:1.22}
+      .hero__ref{font-size:1.1rem;margin-bottom:12px}
+          .hero__sub{font-size:.85rem;margin-bottom:10px;line-height:1.6}
+      .hero__cta-text{font-size:.75rem;margin-bottom:14px}
+      .hero__form-wrap{max-width:100%}
+      .hero__audience{font-size:.75rem;margin-top:10px}
+      .form-group{margin-bottom:10px}
+      .form-group input{padding:14px 16px;font-size:.9rem}
+      .btn-gold{padding:15px 20px;font-size:.82rem}
+      .nova-lente__img img{aspect-ratio:3/4;object-position:center top;max-height:500px}
+      .crenca,.nova-lente,.pilares,.form-section,.identificacao,.sobre{padding:56px 18px}
+      .programacao{padding:64px 18px}
+      .manifesto,.cta-final{padding:72px 18px}
+      .pilar-card{padding:28px 22px}
+      .form-section__inner{max-width:100%}
+      .sobre__img img{aspect-ratio:3/4;object-position:center top}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- OVERLAY MALABARISTA -->
+  <div class="submit-overlay" id="submitOverlay">
+    <div class="juggler-wrap">
+      <svg class="juggler-svg" viewBox="0 0 160 200" xmlns="http://www.w3.org/2000/svg">
+        <!-- Cabeça -->
+        <circle class="juggler-head" cx="80" cy="42" r="16"/>
+        <!-- Corpo -->
+        <line class="juggler-body" x1="80" y1="58" x2="80" y2="130"/>
+        <!-- Perna esquerda -->
+        <line class="juggler-body" x1="80" y1="130" x2="55" y2="185"/>
+        <!-- Perna direita -->
+        <line class="juggler-body" x1="80" y1="130" x2="105" y2="185"/>
+        <!-- Braço esquerdo -->
+        <line class="juggler-body left-arm" x1="80" y1="85" x2="45" y2="100"/>
+        <!-- Braço direito -->
+        <line class="juggler-body right-arm" x1="80" y1="85" x2="115" y2="100"/>
+        <!-- Bolinhas -->
+        <circle class="juggler-ball ball-1" cx="45" cy="65" r="7"/>
+        <circle class="juggler-ball ball-2" cx="80" cy="45" r="7"/>
+        <circle class="juggler-ball ball-3" cx="115" cy="65" r="7"/>
+      </svg>
+    </div>
+    <p class="submit-overlay__text">Inscrição confirmada</p>
+    <p class="submit-overlay__sub">Sua Jornada começou</p>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div><div class="hero__overlay"></div><div class="particles" id="heroParticles"></div>
+    <div class="hero__inner">
+      <img src="images/logo-jornada.png" alt="Logo Jornada do Professor Consciente" class="hero__logo" style="filter:brightness(0) invert(1) drop-shadow(0 0 20px rgba(214,167,58,.3))">
+      <div class="hero__content">
+        <p class="hero__eyebrow">A Jornada do Professor Consciente</p>
+        <p class="hero__date"><span>21, 22 e 24 de setembro</span> &nbsp;|&nbsp; Online &nbsp;|&nbsp; Gratuito</p>
+        <h1 class="hero__title">O que te esgota não é dar aula, é tentar ensinar todos os alunos do mesmo jeito. Seu aluno não precisa de mais repetição. Ele precisa do <span class="highlight">seu olhar para avançar.</span></h1><p class="hero__ref">Torne-se a <span class="highlight">REFERÊNCIA</span> em ensino de movimento na sua região.</p>
+        <p class="hero__sub">Aprenda a observar cada aluno, identificar a origem das suas dificuldades e adaptar a sua didática para transformar movimento em consciência, evolução e propósito.</p>
+        <p class="hero__cta-text">Preencha seus dados abaixo para garantir sua participação na Jornada do Professor Consciente.</p>
+        <div class="hero__form-wrap">
+          <form id="formHero" class="lead-form" novalidate>
+            <p class="hp-field"><label>Não preencha: <input name="bot-field" class="bot-field" tabindex="-1" autocomplete="off"></label></p>
+            <div class="form-alert"></div>
+            <div class="form-group"><input type="text" name="fullName" placeholder="Nome completo" required autocomplete="name"><span class="field-error">Digite seu nome completo.</span></div>
+            <div class="form-group"><input type="email" name="email" placeholder="E-mail" required autocomplete="email" inputmode="email"><span class="field-error">Digite um e-mail válido.</span></div>
+            <div class="form-group"><input type="tel" name="whatsapp" placeholder="WhatsApp com DDD — (00) 00000-0000" required autocomplete="tel" inputmode="numeric" maxlength="15"><span class="field-error">Digite um WhatsApp válido com DDD.</span></div>
+            <button type="submit" class="btn-gold">QUERO ENXERGAR ALÉM DO MOVIMENTO</button>
+          </form>
+          <p class="hero__audience">Para todos os profissionais que ensinam através do movimento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUEBRA DE CRENÇA -->
+  <section class="crenca" id="crenca">
+    <div class="deco-circle" style="width:300px;height:300px;top:-100px;right:-80px"></div>
+    <div class="deco-circle" style="width:200px;height:200px;bottom:-60px;left:-40px"></div>
+    <div class="crenca__inner">
+      <img src="images/logo-jornada.png" alt="" class="section-logo section-logo--color reveal">
+      <span class="gold-line gold-line--center reveal"></span>
+      <h2 class="crenca__title reveal">O fim do <span class="gold-quote">"Ele só precisa repetir mais."</span></h2>
+      <div class="crenca__text reveal">
+        <p>Se você dá aula, provavelmente já viveu isso:</p>
+        <p>O aluno tenta, erra, você corrige, demonstra novamente... e ele continua exatamente no mesmo lugar.</p>
+        <p>Não significa necessariamente que ele esteja desinteressado.</p>
+        <p>E também não significa que você seja um professor ruim.</p>
+        <p><strong style="color:var(--dark)">O problema é que erros parecidos podem nascer de dificuldades completamente diferentes.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOVA LENTE -->
+  <section class="nova-lente" id="nova-lente">
+    <div class="deco-dot" style="top:15%;right:10%"></div><div class="deco-dot" style="bottom:20%;left:5%"></div>
+    <div class="deco-line-v" style="height:200px;top:10%;right:20%"></div>
+    <div class="nova-lente__inner">
+      <div class="nova-lente__img reveal-left"><img src="images/nova-lente.jpg" alt="Davi Ribeiro ensinando" loading="lazy"></div>
+      <div class="nova-lente__content reveal-right">
+        <h2 class="nova-lente__title">Antes de corrigir o movimento, você precisa compreender o aluno.</h2>
+        <div class="nova-lente__text">
+          <p>Uma dificuldade pode ser técnica. Pode ser física. Pode nascer do medo.</p>
+          <p>Pode estar ligada à atenção, à percepção corporal ou à forma como aquele aluno compreendeu a tarefa.</p>
+          <p>Quando tratamos todas essas situações apenas com mais repetição, podemos aumentar exatamente a dificuldade que queríamos resolver.</p>
+          <p>É por isso que o Professor Consciente desenvolve aquilo que chamamos de:</p>
+          <p class="olhar">Olhar Diagnóstico.</p>
+          <p>Ele aprende a enxergar o erro como informação.</p>
+          <p>Porque antes de perguntar: <span class="question">"Como eu corrijo isso?"</span></p>
+          <p>existe uma pergunta ainda mais importante: <span class="question">"O que está travando este aluno?"</span></p>
+          <p>É essa nova lente que você vai começar a desenvolver durante a Jornada do Professor Consciente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PILARES -->
+  <section class="pilares" id="pilares">
+    <div class="deco-circle" style="width:400px;height:400px;bottom:-150px;left:-100px"></div>
+    <div class="pilares__inner">
+      <span class="gold-line gold-line--center reveal"></span>
+      <h2 class="pilares__title reveal">Os 3 pilares do Professor Consciente</h2>
+      <div class="pilares__grid">
+        <div class="pilar-card reveal-scale stagger-1"><p class="pilar-card__num">01</p><p class="pilar-card__title">Movimento</p><p class="pilar-card__text">O que o corpo faz. Execução, coordenação, progressão e estímulos adequados para que o movimento possa acontecer.</p></div>
+        <div class="pilar-card reveal-scale stagger-2"><p class="pilar-card__num">02</p><p class="pilar-card__title">Consciência</p><p class="pilar-card__text">O que a mente percebe. O aluno deixa de apenas repetir e começa a compreender o próprio corpo durante a ação.</p></div>
+        <div class="pilar-card reveal-scale stagger-3"><p class="pilar-card__num">03</p><p class="pilar-card__title">Propósito</p><p class="pilar-card__text">O que o coração entende. O movimento deixa de ser apenas uma tarefa e passa a gerar significado, confiança, persistência e desenvolvimento.</p></div>
+      </div>
+      <p class="pilares__closing reveal">Movimento faz o aluno agir.<br>Consciência faz o aluno perceber.<br>Propósito faz aquilo permanecer.</p>
+    </div>
+  </section>
+
+  <!-- PROGRAMAÇÃO — AZUL -->
+  <section class="programacao" id="programacao">
+    <div class="particles" id="progParticles"></div>
+    <div class="programacao__inner">
+      <img src="images/logo-jornada.png" alt="" class="section-logo section-logo--white reveal">
+      <span class="gold-line reveal"></span>
+      <h2 class="programacao__title reveal">Olha o que te espera</h2>
+      <div class="programacao__grid">
+        <div>
+          <div class="aula-card reveal stagger-1">
+            <p class="aula-card__eyebrow">Aula 1 — 21/09</p>
+            <h3 class="aula-card__title">O Ponto Cego da Didática</h3>
+            <p class="aula-card__sub">Descubra o que realmente trava o seu aluno.</p>
+            <p class="aula-card__text">Por que alguns alunos continuam estagnados mesmo quando a aula parece boa? Você vai aprender a olhar além do erro e começar a identificar se uma dificuldade pode ser técnica, física, emocional ou comportamental. O erro deixa de ser apenas uma falha e passa a funcionar como um mapa.</p>
+            <p class="aula-card__time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>19h19 — Horário de Brasília</p>
+          </div>
+          <div class="aula-card reveal stagger-2">
+            <p class="aula-card__eyebrow">Aula 2 — 22/09</p>
+            <h3 class="aula-card__title">A Arquitetura da Aula Inesquecível</h3>
+            <p class="aula-card__sub">O ciclo de 50 minutos que engaja, cativa e fideliza o aluno.</p>
+            <p class="aula-card__text">Conheça uma estrutura prática para organizar a sua aula através de três momentos: Ativação. Base. Integração. Uma aula com intenção, progressão e espaço para o lúdico — sem depender de você terminar cada dia completamente exausto para que ela funcione.</p>
+            <p class="aula-card__time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>19h19 — Horário de Brasília</p>
+          </div>
+          <div class="aula-card reveal stagger-3">
+            <p class="aula-card__eyebrow">Aula 3 — 24/09</p>
+            <h3 class="aula-card__title">O Professor Memorável</h3>
+            <p class="aula-card__sub">Como transformar a sua didática em respeito, autoridade e valorização real.</p>
+            <p class="aula-card__text">Você vai entender como uma forma mais consciente de ensinar influencia a evolução do aluno, a retenção, a percepção do seu trabalho e a autoridade que você constrói como professor. Porque existe uma grande diferença entre ser lembrado como "o professor que passava exercícios" e "o professor que conseguiu me fazer evoluir."</p>
+            <p class="aula-card__time"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>19h19 — Horário de Brasília</p>
+          </div>
+        </div>
+        <div class="programacao__img reveal-right"><img src="images/programacao.jpg" alt="Davi Ribeiro" loading="lazy"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEGUNDO FORMULÁRIO -->
+  <section class="form-section" id="form-meio">
+    <div class="deco-circle" style="width:250px;height:250px;top:-80px;left:-60px"></div>
+    <div class="form-section__inner reveal">
+      <img src="images/logo-jornada.png" alt="" class="section-logo section-logo--color">
+      <span class="gold-line gold-line--center"></span>
+      <h2 class="form-section__title">Comece a enxergar suas aulas com uma nova lente.</h2>
+      <p class="form-section__sub">Preencha seus dados e participe gratuitamente das 3 aulas da Jornada do Professor Consciente.</p>
+      <form id="formMeio" class="lead-form form-light" novalidate>
+        <p class="hp-field"><label>Não preencha: <input name="bot-field" class="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="form-alert"></div>
+        <div class="form-group"><input type="text" name="fullName" placeholder="Nome completo" required autocomplete="name"><span class="field-error">Digite seu nome completo.</span></div>
+        <div class="form-group"><input type="email" name="email" placeholder="E-mail" required autocomplete="email" inputmode="email"><span class="field-error">Digite um e-mail válido.</span></div>
+        <div class="form-group"><input type="tel" name="whatsapp" placeholder="WhatsApp com DDD — (00) 00000-0000" required autocomplete="tel" inputmode="numeric" maxlength="15"><span class="field-error">Digite um WhatsApp válido com DDD.</span></div>
+        <button type="submit" class="btn-gold">QUERO ENSINAR COM MAIS CONSCIÊNCIA E PROPÓSITO</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- MANIFESTO -->
+  <section class="manifesto" id="manifesto">
+    <div class="manifesto__bg"></div><div class="manifesto__overlay"></div><div class="particles" id="manifestoParticles"></div>
+    <div class="manifesto__accents">
+      <div class="acc-ring acc-ring--1"></div><div class="acc-ring acc-ring--2"></div><div class="acc-ring acc-ring--3"></div>
+    </div>
+    <div class="manifesto__inner">
+      <img src="images/logo-jornada.png" alt="" class="manifesto__logo reveal" style="filter:brightness(0) invert(1) drop-shadow(0 0 20px rgba(214,167,58,.25))">
+      <h2 class="manifesto__title reveal">Seu aluno já tem toda a informação do mundo na palma da mão.</h2>
+      <div class="manifesto__platforms reveal">
+        <span class="manifesto__pill">Google.</span>
+        <span class="manifesto__pill">YouTube.</span>
+        <span class="manifesto__pill">TikTok.</span>
+        <span class="manifesto__pill">Inteligência Artificial.</span>
+      </div>
+      <div class="manifesto__divider reveal"></div>
+      <p class="manifesto__highlight reveal">Mas informação não é sabedoria.</p>
+      <div class="manifesto__lines reveal">
+        <p class="manifesto__line">Uma tela não percebe o medo antes de uma tentativa.</p>
+        <p class="manifesto__line">Não enxerga a insegurança.</p>
+        <p class="manifesto__line">Não entende aquele silêncio.</p>
+        <p class="manifesto__line">Não adapta o caminho porque percebeu que aquele aluno precisa aprender de outra forma.</p>
+        <p class="manifesto__line manifesto__line--accent">O papel do professor nunca foi apenas passar informação.</p>
+        <p class="manifesto__line manifesto__line--accent">É observar. É conectar. É conduzir.</p>
+        <p class="manifesto__line manifesto__line--accent">É transformar conhecimento em experiência.</p>
+      </div>
+      <p class="manifesto__closing reveal">É isso que faz um professor ser <span class="gold">memorável.</span></p>
+    </div>
+  </section>
+
+  <!-- IDENTIFICAÇÃO -->
+  <section class="identificacao" id="identificacao">
+    <div class="deco-circle" style="width:350px;height:350px;top:-120px;right:-80px"></div>
+    <div class="identificacao__inner">
+      <span class="gold-line gold-line--center reveal"></span>
+      <h2 class="identificacao__title reveal">Essa Jornada é para você que...</h2>
+      <div class="identificacao__grid">
+        <div class="id-card reveal stagger-1">Dá aula e sente que alguns alunos simplesmente não evoluem, mesmo depois de várias tentativas e correções.</div>
+        <div class="id-card reveal stagger-2">Tem uma boa bagagem técnica, mas às vezes não sabe o que fazer quando um aluno trava.</div>
+        <div class="id-card reveal stagger-3">Está cansado de procurar novos exercícios apenas para tentar manter a turma interessada.</div>
+        <div class="id-card reveal stagger-4">Sente que entrega muito mais do que é reconhecido profissionalmente.</div>
+        <div class="id-card reveal stagger-5">Termina alguns dias completamente exausto, tentando sustentar sozinho a energia da aula.</div>
+        <div class="id-card reveal stagger-6">Quer compreender melhor cada aluno, em vez de apenas mandar todo mundo repetir a mesma coisa.</div>
+        <div class="id-card reveal stagger-7">Quer ser lembrado pelo desenvolvimento que gera, e não apenas pelos movimentos que consegue executar.</div>
+      </div>
+      <p class="identificacao__closing reveal">Se você se reconheceu em algum desses pontos,<br>a Jornada foi construída para você.</p>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final" id="cta-final">
+    <div class="cta-final__bg"></div><div class="cta-final__overlay"></div><div class="particles" id="ctaParticles"></div>
+    <div class="cta-final__inner">
+      <img src="images/logo-jornada.png" alt="" class="cta-final__logo reveal" style="filter:brightness(0) invert(1) drop-shadow(0 0 15px rgba(214,167,58,.2))">
+      <span class="gold-line gold-line--center reveal"></span>
+      <h2 class="cta-final__title reveal">A aula termina.<br>O aprendizado <span class="gold">continua.</span></h2>
+      <p class="cta-final__text reveal">Você não precisa abandonar tudo o que já aprendeu. Precisa apenas desenvolver uma nova maneira de enxergar aquilo que acontece diante de você todos os dias.</p>
+      <p class="cta-final__event reveal">A Jornada do Professor Consciente</p>
+      <p class="cta-final__date reveal">21, 22 e 24 de setembro</p>
+      <p class="cta-final__form-cta reveal">Preencha seus dados abaixo e garanta a sua participação.</p>
+      <form id="formFinal" class="lead-form reveal" novalidate>
+        <p class="hp-field"><label>Não preencha: <input name="bot-field" class="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <div class="form-alert"></div>
+        <div class="form-group"><input type="text" name="fullName" placeholder="Nome completo" required autocomplete="name"><span class="field-error">Digite seu nome completo.</span></div>
+        <div class="form-group"><input type="email" name="email" placeholder="E-mail" required autocomplete="email" inputmode="email"><span class="field-error">Digite um e-mail válido.</span></div>
+        <div class="form-group"><input type="tel" name="whatsapp" placeholder="WhatsApp com DDD — (00) 00000-0000" required autocomplete="tel" inputmode="numeric" maxlength="15"><span class="field-error">Digite um WhatsApp válido com DDD.</span></div>
+        <button type="submit" class="btn-gold">QUERO ME TORNAR REFERÊNCIA COMO PROFESSOR</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- SOBRE DAVI -->
+  <section class="sobre" id="sobre">
+    <div class="deco-line-v" style="height:300px;top:5%;left:8%"></div>
+    <div class="deco-dot" style="top:10%;right:12%"></div><div class="deco-dot" style="bottom:15%;left:18%"></div>
+    <div class="sobre__inner">
+      <div class="sobre__img reveal-left"><img src="images/quem-e-davi.jpg" alt="Davi Ribeiro" loading="lazy"></div>
+      <div class="sobre__content reveal-right">
+        <span class="gold-line"></span>
+        <h2 class="sobre__title" style="margin-top:24px">Quem é <span class="gold">Davi Ribeiro</span></h2>
+        <div class="sobre__text">
+          <p>Professor de Educação Física, educador, artista circense e criador do Método ZU.</p>
+          <p>Formado em Educação Física pela Universidade do Estado de Minas Gerais e pós-graduado em Arteterapia, Davi trabalha profissionalmente com o circo desde 2015.</p>
+          <p>Entre 2018 e 2025, construiu e conduziu seu próprio circo itinerante, unindo educação, movimento, arte e desenvolvimento humano.</p>
+          <p>Ao longo da carreira, já acompanhou <strong>mais de 3 mil alunos</strong> e impactou <strong>mais de 20 mil pessoas</strong> através de aulas, oficinas e espetáculos.</p>
+          <p>Sua trajetória também inclui experiências e apresentações no Brasil, Bolívia, Paraguai e Espanha.</p>
+          <p>Depois de anos observando alunos diferentes enfrentarem dificuldades diferentes, percebeu algo que mudou sua forma de ensinar:</p>
+          <p class="emphasis"><strong>saber executar um movimento não significa saber ensinar alguém a executá-lo.</strong></p>
+          <p>Foi dessa experiência, unida à Educação Física, psicomotricidade, consciência corporal, didática e à vivência prática do circo, que nasceu o Método ZU.</p>
+          <p>Hoje, seu trabalho é ajudar professores a desenvolverem um olhar mais consciente e estratégico sobre seus alunos.</p>
+          <p>Não para formar executores perfeitos. Mas professores capazes de observar, compreender, adaptar e desenvolver pessoas através do movimento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <img src="images/logo-jornada.png" alt="" class="footer__logo">
+    <p class="footer__name">Davi Ribeiro</p>
+    <p class="footer__method">Criador do Método ZU</p>
+    <p class="footer__event">A Jornada do Professor Consciente</p>
+    <p class="footer__legal">&copy; 2026 — Todos os direitos reservados.<br>Evento educacional gratuito. Os resultados e aplicações apresentados dependem do contexto, experiência e atuação individual de cada participante.</p>
+  </footer>
+
+  <script>
+    // ===== REVEAL =====
+    (function(){if(window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;var o=new IntersectionObserver(function(e){e.forEach(function(i){if(i.isIntersecting){i.target.classList.add('visible');o.unobserve(i.target)}})},{threshold:.08,rootMargin:'0px 0px -30px 0px'});document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale').forEach(function(el){o.observe(el)})})();
+
+    // ===== PARTICLES =====
+    function cp(id,n){var c=document.getElementById(id);if(!c)return;for(var i=0;i<n;i++){var p=document.createElement('div');p.className='particle';p.style.left=Math.random()*100+'%';var s=2+Math.random()*4;p.style.width=s+'px';p.style.height=s+'px';p.style.animationDuration=(8+Math.random()*16)+'s';p.style.animationDelay=(Math.random()*10)+'s';c.appendChild(p)}}
+    cp('heroParticles',22);cp('progParticles',12);cp('manifestoParticles',18);cp('ctaParticles',15);
+
+    // ===== MANIFESTO STAGGER =====
+    (function(){var items=document.querySelectorAll('.manifesto__pill');var o=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){items.forEach(function(it,i){it.style.opacity='0';it.style.transform='translateY(12px)';setTimeout(function(){it.style.transition='opacity .5s ease,transform .5s ease';it.style.opacity='1';it.style.transform='translateY(0)'},200+i*200)});o.unobserve(en.target)}})},{threshold:.3});if(items[0])o.observe(items[0].parentElement)})();
+    (function(){var lines=document.querySelectorAll('.manifesto__line');var o=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){lines.forEach(function(l,i){l.style.opacity='0';l.style.transform='translateY(10px)';setTimeout(function(){l.style.transition='opacity .5s ease,transform .5s ease';l.style.opacity='1';l.style.transform='translateY(0)'},100+i*120)});o.unobserve(en.target)}})},{threshold:.2});if(lines[0])o.observe(lines[0].parentElement)})();
+
+    // ===== WHATSAPP MASK =====
+    document.querySelectorAll('input[name="whatsapp"]').forEach(function(input){
+      input.addEventListener('input',function(e){
+        var digits=e.target.value.replace(/\D/g,'').slice(0,11);
+        var f=digits;
+        if(digits.length>0)f='('+digits.substring(0,2);
+        if(digits.length>=3)f+=') '+digits.substring(2,digits.length>10?7:6);
+        if(digits.length>10)f+='-'+digits.substring(7,11);
+        else if(digits.length>6)f+='-'+digits.substring(6,10);
+        e.target.value=f;
+      });
+    });
+
+    // ===== TRACKING HELPERS =====
+    function getCookie(n){var m=document.cookie.match('(^|;)\\s*'+n+'\\s*=\\s*([^;]+)');return m?decodeURIComponent(m.pop()):null}
+    function setCookie(n,v,d){document.cookie=n+'='+v+'; expires='+(new Date(Date.now()+d*864e5)).toUTCString()+'; path=/; SameSite=Lax'}
+    function genEvtId(){return(window.crypto&&crypto.randomUUID)?crypto.randomUUID():'evt_'+Date.now()+'_'+Math.random().toString(36).slice(2)}
+    function getFbc(){var fbc=getCookie('_fbc');if(fbc)return fbc;var p=new URLSearchParams(window.location.search);var fbclid=p.get('fbclid');if(fbclid){fbc='fb.1.'+Date.now()+'.'+fbclid;setCookie('_fbc',fbc,90);return fbc}return null}
+
+    function sendLeadTracking(){
+      var eventId=genEvtId();
+      if(typeof fbq==='function'){fbq('track','Lead',{content_name:'A Jornada do Professor Consciente - Inscrição'},{eventID:eventId})}
+      fetch('/.netlify/functions/facebook-capi',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({eventName:'Lead',eventId:eventId,eventUrl:window.location.href,fbp:getCookie('_fbp'),fbc:getFbc()}),keepalive:true}).catch(function(){});
+    }
+
+    // ===== FORM VALIDATION =====
+    function validateForm(form){
+      var valid=true;
+      var nameInput=form.querySelector('input[name="fullName"]');
+      var emailInput=form.querySelector('input[name="email"]');
+      var whatsInput=form.querySelector('input[name="whatsapp"]');
+
+      // Name: at least 2 words
+      var nameOk=nameInput.value.trim().split(/\s+/).filter(Boolean).length>=2;
+      nameInput.classList.toggle('invalid',!nameOk);
+      nameInput.nextElementSibling.classList.toggle('show',!nameOk);
+      if(!nameOk)valid=false;
+
+      // Email
+      var emailOk=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value.trim());
+      emailInput.classList.toggle('invalid',!emailOk);
+      emailInput.nextElementSibling.classList.toggle('show',!emailOk);
+      if(!emailOk)valid=false;
+
+      // WhatsApp: 10 or 11 digits
+      var digits=whatsInput.value.replace(/\D/g,'');
+      var whatsOk=digits.length===10||digits.length===11;
+      whatsInput.classList.toggle('invalid',!whatsOk);
+      whatsInput.nextElementSibling.classList.toggle('show',!whatsOk);
+      if(!whatsOk)valid=false;
+
+      return valid;
+    }
+
+    // ===== OVERLAY =====
+    function showOverlay(){
+      var o=document.getElementById('submitOverlay');o.classList.add('active');
+      setTimeout(function(){window.location.href='/obrigado'},3500);
+    }
+
+    // ===== FORM SUBMIT =====
+    document.querySelectorAll('.lead-form').forEach(function(form){
+      // Blur validation
+      form.querySelectorAll('input[required]').forEach(function(inp){
+        inp.addEventListener('blur',function(){validateForm(form)});
+        inp.addEventListener('input',function(){
+          if(inp.classList.contains('invalid')){inp.classList.remove('invalid');if(inp.nextElementSibling)inp.nextElementSibling.classList.remove('show')}
+        });
+      });
+
+      form.addEventListener('submit',function(e){
+        e.preventDefault();
+        var alertEl=form.querySelector('.form-alert');
+        if(alertEl)alertEl.classList.remove('show');
+
+        if(!validateForm(form))return;
+
+        var btn=form.querySelector('.btn-gold');
+        btn.disabled=true;
+        btn.textContent='Enviando...';
+
+        var botField=form.querySelector('.bot-field');
+        var payload={
+          fullName:form.querySelector('input[name="fullName"]').value.trim(),
+          email:form.querySelector('input[name="email"]').value.trim(),
+          whatsapp:form.querySelector('input[name="whatsapp"]').value.trim(),
+          botField:botField?botField.value:''
+        };
+
+        fetch('/.netlify/functions/mailingboss-lead',{
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify(payload)
+        })
+        .then(function(response){
+          if(!response.ok)throw new Error('Falha no envio');
+          sendLeadTracking();
+          showOverlay();
+        })
+        .catch(function(){
+          btn.disabled=false;
+          btn.textContent=btn.getAttribute('data-original')||'QUERO PARTICIPAR';
+          if(alertEl){alertEl.textContent='Não foi possível enviar. Verifique sua internet e tente novamente.';alertEl.classList.add('show')}
+        });
+      });
+
+      // Store original button text
+      var btn=form.querySelector('.btn-gold');
+      if(btn)btn.setAttribute('data-original',btn.textContent);
+    });
+  </script>
+  <script>
+  (function () {
+    var WEBHOOK_URL = 'https://orkestria-api-production.up.railway.app/api/traffic-manager/conversions/cmrza0lpr000201plrm944s59/lead?token=7855d13e1630153776d54f72dc555e129edbb2c7cae3ff11';
+    function getCookie(name) {
+      var match = document.cookie.match(new RegExp('(^|;\\s*)' + name + '=([^;]*)'));
+      return match ? decodeURIComponent(match[2]) : undefined;
+    }
+    function fieldValue(form, placeholder) {
+      if (!placeholder) return '';
+      var el = form.querySelector('input[placeholder="' + placeholder + '"]');
+      return el ? el.value.trim() : '';
+    }
+    function sendLead(form) {
+      if (!form) return;
+      var email = fieldValue(form, 'E-mail');
+      var phone = fieldValue(form, 'WhatsApp com DDD \u2014 (00) 00000-0000');
+      var name = fieldValue(form, 'Nome completo');
+      var cep = fieldValue(form, '');
+      if (!email && !phone) return;
+      var payload = {
+        name: name, email: email, phone: phone,
+        cep: cep || undefined,
+        fbp: getCookie('_fbp'), fbc: getCookie('_fbc'),
+        pageUrl: location.href,
+      };
+      fetch(WEBHOOK_URL, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload), keepalive: true,
+      }).catch(function () {});
+    }
+    function setup() {
+      var triggers = Array.prototype.filter.call(
+        document.querySelectorAll('a, button'),
+        function (el) { return el.textContent.trim().toUpperCase().indexOf('QUERO') !== -1; }
+      );
+      triggers.forEach(function (trigger) {
+        var form = trigger.closest('form') || document.querySelector('form');
+        trigger.addEventListener('click', function () { sendLead(form); });
+      });
+    }
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setup);
+    } else { setup(); }
+  })();
+  </script>
+</body>
+</html>
