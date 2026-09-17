@@ -1327,6 +1327,7 @@ em { font-style: italic; color: var(--terracotta); font-family: var(--font-serif
           <button type="submit" class="btn btn-primary btn-submit">Quero dar meu primeiro passo</button>
 
           <p class="form-privacy">Seus dados ficam apenas com a Fios que Curam. Nada de spam.</p>
+          <p class="field-error" id="form-submit-error" role="alert" style="text-align:center;margin-top:0.75rem;"></p>
         </form>
 
         <div class="form-success" id="form-success" hidden role="status" aria-live="polite">
@@ -1607,13 +1608,6 @@ em { font-style: italic; color: var(--terracotta); font-family: var(--font-serif
         return;
       }
 
-      /* --------------------------------------------------------------
-         Sem backend por enquanto: apenas coletamos os valores em um
-         objeto estruturado (guardado na sessão do navegador) para que
-         a integração futura (webhook / API / CRM / Google Sheets /
-         RD Station / Mailchimp / ConvertKit) seja simples de plugar
-         aqui — basta substituir o bloco abaixo por um fetch/POST real.
-      -------------------------------------------------------------- */
       var payload = {
         nome: fields.nome.el.value.trim(),
         email: fields.email.el.value.trim(),
@@ -1625,23 +1619,42 @@ em { font-style: italic; color: var(--terracotta); font-family: var(--font-serif
         enviadoEm: new Date().toISOString()
       };
 
-      try {
-        window.sessionStorage.setItem("fiosquecuram:lead", JSON.stringify(payload));
-      } catch (err) {
-        /* sessionStorage pode não estar disponível; segue sem quebrar o fluxo */
+      var submitBtn = form.querySelector(".btn-submit");
+      var submitError = document.getElementById("form-submit-error");
+      if (submitError) submitError.textContent = "";
+      if (submitBtn) {
+        submitBtn.dataset.originalText = submitBtn.dataset.originalText || submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Enviando...";
       }
 
-      /* Ponto de integração futura, por exemplo:
-         fetch("https://sua-api.com/leads", {
-           method: "POST",
-           headers: { "Content-Type": "application/json" },
-           body: JSON.stringify(payload)
-         });
-      */
+      fetch("/.netlify/functions/mailingboss-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      })
+        .then(function (response) {
+          if (!response.ok) throw new Error("Falha no envio");
 
-      form.hidden = true;
-      successBox.hidden = false;
-      successBox.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "center" });
+          try {
+            window.sessionStorage.setItem("fiosquecuram:lead", JSON.stringify(payload));
+          } catch (err) {
+            /* sessionStorage pode não estar disponível; segue sem quebrar o fluxo */
+          }
+
+          form.hidden = true;
+          successBox.hidden = false;
+          successBox.scrollIntoView({ behavior: prefersReducedMotion ? "auto" : "smooth", block: "center" });
+        })
+        .catch(function () {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.textContent = submitBtn.dataset.originalText;
+          }
+          if (submitError) {
+            submitError.textContent = "Não foi possível enviar. Verifique sua internet e tente novamente.";
+          }
+        });
     });
   }
 })();
