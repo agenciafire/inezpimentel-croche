@@ -64,7 +64,8 @@ exports.handler = async function (event) {
         if (/exist|already|cadastrad|duplic/.test(msg)) return json(200, { status: 'success', duplicate: true });
 
         console.error('MailingBoss retornou erro:', result);
-        return json(502, { error: 'Falha ao cadastrar na lista' });
+        // A resposta do MailingBoss não contém a chave; devolvemos o motivo para facilitar o diagnóstico.
+        return json(502, { error: 'Falha ao cadastrar na lista', details: result });
     } catch (err) {
         console.error('Erro ao chamar API do MailingBoss:', err);
         return json(502, { error: 'Erro de comunicação com o MailingBoss' });
