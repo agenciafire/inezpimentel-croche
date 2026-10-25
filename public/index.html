@@ -547,8 +547,7 @@ a{color:inherit}
       <p class="hero__sub">Conheça o <strong>método testado e validado há mais de 6 anos</strong> na Fios que Curam e descubra como unir técnica, produção e visão de negócio.</p>
 
       <div class="hero__form">
-        <form class="lead-form" data-form="hero" name="inscricao-muito-alem-do-croche" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-          <input type="hidden" name="form-name" value="inscricao-muito-alem-do-croche">
+        <form class="lead-form" data-form="hero" novalidate>
           <input type="hidden" name="origem" value="topo">
           <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="utm_term">
           <p class="hp" aria-hidden="true"><label>Não preencha este campo: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
@@ -827,8 +826,7 @@ a{color:inherit}
       <p class="lead reveal" style="--d:.14s">No dia 18 de novembro, às 20h, participe da aula gratuita Muito Além do Crochê e descubra como começar a enxergar essa habilidade com uma visão empreendedora, mesmo que você ainda esteja no primeiro ponto.</p>
       <div class="form-card reveal reveal-scale" style="--d:.18s">
         <div class="event"><b>Muito Além do Crochê</b><span>18 DE NOVEMBRO • 20H • ONLINE E GRATUITO</span></div>
-        <form class="lead-form" data-form="final" name="inscricao-muito-alem-do-croche" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
-          <input type="hidden" name="form-name" value="inscricao-muito-alem-do-croche">
+        <form class="lead-form" data-form="final" novalidate>
           <input type="hidden" name="origem" value="final">
           <input type="hidden" name="utm_source"><input type="hidden" name="utm_medium"><input type="hidden" name="utm_campaign"><input type="hidden" name="utm_content"><input type="hidden" name="utm_term">
           <p class="hp" aria-hidden="true"><label>Não preencha este campo: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
@@ -909,14 +907,15 @@ a{color:inherit}
    CONFIGURAÇÃO — integração futura
    ========================================================= */
 const CONFIG = {
-  /* Página de obrigado (mesma pasta). Se mudar de endereço, troque aqui. */
-  redirectUrl: 'obrigado.html',
+  /* Página de obrigado no site publicado. (Abrindo o arquivo direto do computador, usa o obrigado.html da mesma pasta.) */
+  redirectUrl: '/muito-alem-do-croche/obrigado.html',
 
   /* Para onde vão as inscrições:
-     'netlify'   → Netlify Forms (o site já é hospedado na Netlify; os cadastros aparecem em Netlify > Formulários)
+     'mailingboss' → lista "Inez- Evento - Nov18" na Builderall (função netlify/functions/mailingboss-evento.js)
+     'netlify'   → Netlify Forms (os cadastros aparecem em Netlify > Formulários)
      'webhook'   → envia JSON para CONFIG.webhookUrl (RD Station, ActiveCampaign, Make, Zapier, planilha…)
      'simulacao' → não envia nada (só para testes). Abrindo o arquivo direto do computador, a página entra em simulação automaticamente. */
-  leadEndpoint: 'netlify',
+  leadEndpoint: 'mailingboss',
   webhookUrl: '',
 
   /* Meta Pixel */
@@ -955,6 +954,11 @@ const CONFIG = {
 async function sendLead(form, lead){
   const mode = location.protocol==='file:' ? 'simulacao' : CONFIG.leadEndpoint;
   try{
+    if(mode==='mailingboss'){
+      const r=await fetch('/.netlify/functions/mailingboss-evento',{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({nome:lead.nome, email:lead.email, whatsapp:lead.whatsapp, botField:(form.querySelector('input[name="bot-field"]')||{}).value||''})});
+      return {ok:r.ok, simulated:false};
+    }
     if(mode==='netlify'){
       const body=new URLSearchParams(new FormData(form)).toString();
       const r=await fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body});
@@ -1217,7 +1221,7 @@ async function sendLead(form, lead){
       after && after();
       $$('.field').forEach(f=>f.classList.remove('valid','invalid'));
       if(CONFIG.redirectUrl){
-        const u = new URL(CONFIG.redirectUrl, location.href);
+        const u = new URL(location.protocol==='file:' ? 'obrigado.html' : CONFIG.redirectUrl, location.href);
         if(name) u.searchParams.set('nome', name);
         const q = new URLSearchParams(location.search); ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k=>{ if(q.get(k)) u.searchParams.set(k,q.get(k)); });
         setTimeout(()=>{ location.href=u.href; }, 1600);
