@@ -1,0 +1,9 @@
+{
+  "name": "inezpimentel-croche",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Site da Inêz Pimentel na Netlify. A dependência abaixo é usada pela confirmação no WhatsApp (controle de mensagens repetidas).",
+  "dependencies": {
+    "@netlify/blobs": "8.1.0"
+  }
+}

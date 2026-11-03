@@ -8,6 +8,7 @@
 
 const LIST_UID = '6ae54fc413736';      // Lista: Inez- Evento - Nov18 - Portugal
 const PHONE_PREFIX = '351PORTUGAL';    // Indicativo de Portugal (+351) no formato do MailingBoss
+const { enviarConfirmacao } = require('../lib/whatsapp');
 const MAILINGBOSS_BASE = 'https://member.mailingboss.com/integration/index.php';
 
 const json = (statusCode, body) => ({
@@ -58,10 +59,17 @@ exports.handler = async function (event) {
         });
         const result = await response.json().catch(() => ({}));
 
-        if (result.status === 'success') return json(200, { status: 'success' });
+        if (result.status === 'success') {
+            // Confirmação no WhatsApp (só envia se WHATSAPP_ATIVO = sim; nunca derruba a inscrição)
+            await enviarConfirmacao({ event, pais: 'PT', lista: LIST_UID, nome, email, telefoneE164: '351' + digits });
+            return json(200, { status: 'success' });
+        }
 
         const msg = JSON.stringify(result || {}).toLowerCase();
-        if (/exist|already|cadastrad|duplic/.test(msg)) return json(200, { status: 'success', duplicate: true });
+        if (/exist|already|cadastrad|duplic/.test(msg)) {
+            console.log('[INFO] Inscrição repetida (e-mail já estava na lista): WhatsApp não reenviado.');
+            return json(200, { status: 'success', duplicate: true });
+        }
 
         console.error('MailingBoss retornou erro:', result);
         return json(502, { error: 'Falha ao cadastrar na lista', details: result });

@@ -8,6 +8,7 @@
 // Referência: https://ajuda.builderall.com/books/integrações/page/mailingboss-50---integração-api
 
 const LIST_UID = '6ada495a01817'; // Lista: Inez- Evento - Nov18
+const { enviarConfirmacao } = require('../lib/whatsapp');
 const MAILINGBOSS_BASE = 'https://member.mailingboss.com/integration/index.php';
 
 const json = (statusCode, body) => ({
@@ -57,11 +58,18 @@ exports.handler = async function (event) {
         });
         const result = await response.json().catch(() => ({}));
 
-        if (result.status === 'success') return json(200, { status: 'success' });
+        if (result.status === 'success') {
+            // Confirmação no WhatsApp (só envia se WHATSAPP_ATIVO = sim; nunca derruba a inscrição)
+            await enviarConfirmacao({ event, pais: 'BR', lista: LIST_UID, nome, email, telefoneE164: '55' + digits });
+            return json(200, { status: 'success' });
+        }
 
         // Pessoa que se inscreve de novo com o mesmo e-mail: já está na lista, então conta como sucesso.
         const msg = JSON.stringify(result || {}).toLowerCase();
-        if (/exist|already|cadastrad|duplic/.test(msg)) return json(200, { status: 'success', duplicate: true });
+        if (/exist|already|cadastrad|duplic/.test(msg)) {
+            console.log('[INFO] Inscrição repetida (e-mail já estava na lista): WhatsApp não reenviado.');
+            return json(200, { status: 'success', duplicate: true });
+        }
 
         console.error('MailingBoss retornou erro:', result);
         // A resposta do MailingBoss não contém a chave; devolvemos o motivo para facilitar o diagnóstico.
