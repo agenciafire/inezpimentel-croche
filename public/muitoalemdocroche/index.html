@@ -908,7 +908,7 @@ a{color:inherit}
    ========================================================= */
 const CONFIG = {
   /* Página de obrigado no site publicado. (Abrindo o arquivo direto do computador, usa o obrigado.html da mesma pasta.) */
-  redirectUrl: '/muitoalemdocroche/obrigado.html',
+  redirectUrl: '/obrigado',
 
   /* Para onde vão as inscrições:
      'mailingboss' → lista "Inez- Evento - Nov18" na Builderall (função netlify/functions/mailingboss-evento.js)
@@ -1222,8 +1222,8 @@ async function sendLead(form, lead){
       $$('.field').forEach(f=>f.classList.remove('valid','invalid'));
       if(CONFIG.redirectUrl){
         const u = new URL(location.protocol==='file:' ? 'obrigado.html' : CONFIG.redirectUrl, location.href);
-        if(name) u.searchParams.set('nome', name);
-        const q = new URLSearchParams(location.search); ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(k=>{ if(q.get(k)) u.searchParams.set(k,q.get(k)); });
+        /* nome vai pela sessão (endereço limpo: /obrigado) */
+        try{ if(name) sessionStorage.setItem('mac_nome', name); }catch(e){}
         setTimeout(()=>{ location.href=u.href; }, 1600);
       }
       else { running=false; }
