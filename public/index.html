@@ -434,7 +434,7 @@ svg.defs{position:absolute;width:0;height:0}
 /* =========================================================
    C12 · OFERTA (etiqueta da peça)
 ========================================================= */
-.label{display:grid;grid-template-columns:1fr 1fr;max-width:940px;margin:52px auto 0;background:var(--paper);color:var(--text);border-radius:28px;overflow:hidden;box-shadow:0 50px 90px -40px rgba(0,0,0,.65);position:relative}
+.label{scroll-margin-top:64px;display:grid;grid-template-columns:1fr 1fr;max-width:940px;margin:52px auto 0;background:var(--paper);color:var(--text);border-radius:28px;overflow:hidden;box-shadow:0 50px 90px -40px rgba(0,0,0,.65);position:relative}
 .label::after{content:'';position:absolute;inset:12px;border:1.5px dashed rgba(7,90,52,.3);border-radius:20px;pointer-events:none}
 .label__l{padding:44px 38px}
 .label__l h3{font-family:var(--hand);font-size:1.8rem;color:var(--g);font-weight:700;line-height:1;margin-bottom:12px}
@@ -1097,7 +1097,7 @@ fbq('track','ViewContent',{content_name:'Método Fios que Curam',value:497,curre
       <h2 class="h2 rv d1" id="t12" data-product-name>Método Fios que Curam</h2>
       <p class="lead rv d2">O próximo passo da sua jornada com o crochê começa aqui, com a orientação da Inêz.</p>
     </div>
-    <div class="label rv">
+    <div class="label rv" id="oferta-card">
       <div class="label__l">
         <h3>o que vai nessa peça</h3>
         <ul>
@@ -1289,11 +1289,13 @@ const CONFIG = {
     ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','src','sck'].forEach(k=>{ if(q.get(k)) u.searchParams.set(k,q.get(k)); });
     return u.href;
   }
-  $$('[data-buy], .sticky .btn').forEach(b=>{
+  /* Só os 2 botões da oferta (data-buy-final) levam ao checkout. Os demais rolam até o card da oferta. */
+  $$('[data-buy]:not([data-buy-final]), .sticky .btn').forEach(b=>{ b.href='#oferta-card'; b.removeAttribute('rel'); });
+  $$('[data-buy-final]').forEach(b=>{
     if(CONFIG.CHECKOUT_URL){ b.href=checkoutUrl(); b.rel='noopener'; }
     b.addEventListener('click',e=>{
       if(CONFIG.CHECKOUT_URL){ if(window.fbq) fbq('track','InitiateCheckout',{content_name:CONFIG.PRODUCT_NAME,value:CONFIG.PRODUCT_PRICE,currency:'BRL'}); return; }
-      if(b.hasAttribute('data-buy-final')){ e.preventDefault(); say('O checkout oficial será liberado em breve. Fique de olho nos avisos da Fios que Curam.'); }
+      e.preventDefault(); say('O checkout oficial será liberado em breve. Fique de olho nos avisos da Fios que Curam.');
     });
   });
 
