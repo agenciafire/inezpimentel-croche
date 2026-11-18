@@ -1,0 +1,9 @@
+# Endereços antigos -> novos (Netlify)
+/muito-alem-do-croche/obrigado.html   /muitoalemdocroche/obrigado.html   301
+/muito-alem-do-croche/*               /muitoalemdocroche/                301
+/muito-alem-do-croche                 /muitoalemdocroche/                301
+/obrigado.html                        /muitoalemdocroche/obrigado.html   301
+/metodofiosquecuram/*                 /                                  301
+/metodofiosquecuram                   /                                  301
+/metodo-fios-que-curam/*              /                                  301
+/metodo-fios-que-curam                /                                  301
